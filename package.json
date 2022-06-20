@@ -1,0 +1,35 @@
+{
+  "name": "backendonlineshop",
+  "version": "1.0.0",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "dev": "nodemon main.js"
+  },
+  "author": "",
+  "license": "ISC",
+  "devDependencies": {
+    "logplease": "^1.2.15",
+    "nodemon": "^2.0.16"
+  },
+  "dependencies": {
+    "bcryptjs": "^2.4.3",
+    "cors": "^2.8.5",
+    "express": "^4.18.1",
+    "jsonwebtoken": "^8.5.1",
+    "multer": "^1.4.4",
+    "mysql2": "^2.3.3",
+    "nodemailer": "^6.7.5",
+    "sequelize": "^6.19.2"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Molerog/BackendOnlineShop.git"
+  },
+  "keywords": [],
+  "bugs": {
+    "url": "https://github.com/Molerog/BackendOnlineShop/issues"
+  },
+  "homepage": "https://github.com/Molerog/BackendOnlineShop#readme",
+  "description": ""
+}
