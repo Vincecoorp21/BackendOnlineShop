@@ -12,7 +12,7 @@ const logger = Logger.create('Mensaje', options);
 const express = require('express');
 const { typeError } = require('./middleware/errors');
 const app = express();
-const port = 3000;
+const port = 8000;
 const cors = require('cors');
 app.use(express.json());
 app.use(cors());

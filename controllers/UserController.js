@@ -20,19 +20,21 @@ const UserController = {
         attributes: { exclude: ['createdAt', 'updatedAt', 'confirmed'] },
         ...req.body,
         password: hash,
-        confirmed: false,
+        confirmed: true,
+        //cambiado de false a true
         role: 'user',
       });
-      const url = 'http://localhost:3000/users/confirm/' + req.body.email;
-      await transporter.sendMail({
-        to: req.body.email,
-        subject: 'Confirme su registro',
-        html: `<h3>Bienvenido, estás a un paso de registrarte </h3>
-          <a href="${url}"> Click para confirmar tu registro</a>
-          `,
-      });
+      // const url = 'http://localhost:3000/users/confirm/' + req.body.email;
+      // await transporter.sendMail({
+      //   to: req.body.email,
+      //   subject: 'Confirme su registro',
+      //   html: `<h3>Bienvenido, estás a un paso de registrarte </h3>
+      //     <a href="${url}"> Click para confirmar tu registro</a>
+      //     `,
+      // });
       res.status(201).send({
-        message: 'We sent you an email to confirm your register...',
+        // message: 'We sent you an email to confirm your register...',
+        message: 'User registered',
         user,
       });
     } catch (error) {
@@ -155,6 +157,19 @@ const UserController = {
         where: {
           id: req.user.id,
         },
+        include: [
+          {
+            model: Order,
+            attributes: ['order_num'],
+            include: [
+              {
+                model: Product,
+                attributes: ['product', 'price'],
+                through: { attributes: [] },
+              },
+            ],
+          },
+        ],
       });
       if (!user) {
         return res
