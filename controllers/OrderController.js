@@ -4,6 +4,7 @@ const { Order, User, Product, Section, Order_Product } = require('../models/inde
 
 //-----Creación de pedido-----//
 const OrderController = {
+<<<<<<< HEAD
   async create(req, res, next) {
     try {      
       const newOrder = {
@@ -16,11 +17,19 @@ const OrderController = {
       req.body.productsId.forEach(async productId => {
       await Order_Product.create({ProductId:productId, OrderId: order.id})
       });    
+=======
+  async create(req, res) {
+    try {
+      const order = await Order.create({ ...req.body });
+      req.body.productId.forEach(productId => {
+        Order_Product.create(productId);
+      });
+>>>>>>> 06a9cf4 (seeders)
       res.status(201).send({ message: 'order added...', order });
     } catch (error) {
       console.log(error);
-      error.origin = 'Order'
-          next(error)
+      error.origin = 'Order';
+      next(error);
     }
   },
   //-----Muestra el pedido y a su usuario-----//
@@ -60,10 +69,12 @@ const OrderController = {
             model: Product,
             through: { attributes: [] },
             attributes: ['product', 'price'],
-            include: [{
-              model: Section,
-              attributes:['section']
-            }],
+            include: [
+              {
+                model: Section,
+                attributes: ['section'],
+              },
+            ],
           },
         ],
       });
