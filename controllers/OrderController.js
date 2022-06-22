@@ -1,30 +1,27 @@
-const { Order, User, Product, Section, Order_Product } = require('../models/index');
+const {
+  Order,
+  User,
+  Product,
+  Section,
+  Order_Product,
+} = require('../models/index');
 
 //-----> Controlador para tabla "Order" <------//
 
 //-----Creación de pedido-----//
 const OrderController = {
-<<<<<<< HEAD
   async create(req, res, next) {
-    try {      
-      const newOrder = {
-        UserId : req.user.id,
-        date: new Date,
-        updatedAt: new Date,
-        createdAt: new Date,
-      }
-      const order = await Order.create(newOrder);      
-      req.body.productsId.forEach(async productId => {
-      await Order_Product.create({ProductId:productId, OrderId: order.id})
-      });    
-=======
-  async create(req, res) {
     try {
-      const order = await Order.create({ ...req.body });
-      req.body.productId.forEach(productId => {
-        Order_Product.create(productId);
+      const newOrder = {
+        UserId: req.user.id,
+        date: new Date(),
+        updatedAt: new Date(),
+        createdAt: new Date(),
+      };
+      const order = await Order.create(newOrder);
+      req.body.productsId.forEach(async productId => {
+        await Order_Product.create({ ProductId: productId, OrderId: order.id });
       });
->>>>>>> 06a9cf4 (seeders)
       res.status(201).send({ message: 'order added...', order });
     } catch (error) {
       console.log(error);
