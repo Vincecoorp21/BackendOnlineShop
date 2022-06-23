@@ -22,8 +22,8 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'Name needed',
         },
       },
-    },
-      surname: DataTypes.STRING,
+      },
+      surname: DataTypes.STRING,      
       email:{ 
       type: DataTypes.STRING,
       allowNull: false,
@@ -35,7 +35,7 @@ module.exports = (sequelize, DataTypes) => {
           msg: 'Please insert a valid email adress'
         },
       },
-    },
+      },
       confirmed: DataTypes.BOOLEAN,
       dni: DataTypes.STRING,
       password: {
@@ -47,7 +47,10 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
-      role: DataTypes.STRING
+      role: DataTypes.STRING,
+      image_path: {
+        type: DataTypes.STRING,      
+      },
     },
     {
       sequelize,
