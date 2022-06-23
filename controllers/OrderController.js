@@ -20,13 +20,9 @@ const OrderController = {
       };
       const order = await Order.create(newOrder);
       req.body.productsId.forEach(async productId => {
-<<<<<<< HEAD
-      await Order_Product.create({ProductId:productId, OrderId: order.id})
-      });    //thanks to mike & Xavi
-=======
         await Order_Product.create({ ProductId: productId, OrderId: order.id });
       });
->>>>>>> a50fa167e91ac05bb38294c2151d2862ce5112f5
+
       res.status(201).send({ message: 'order added...', order });
     } catch (error) {
       console.log(error);

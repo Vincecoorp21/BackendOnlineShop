@@ -33,8 +33,11 @@ module.exports = (sequelize, DataTypes) => {
           },
         },
       },
+      oldprice: {
+        type: DataTypes.FLOAT,
+      },
       image_path: {
-        type: DataTypes.STRING,      
+        type: DataTypes.STRING,
       },
       SectionId: DataTypes.INTEGER,
       CategoryId: DataTypes.INTEGER,
