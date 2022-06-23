@@ -1,26 +1,37 @@
-const { Order, User, Product, Section, Order_Product } = require('../models/index');
+const {
+  Order,
+  User,
+  Product,
+  Section,
+  Order_Product,
+} = require('../models/index');
 
 //-----> Controlador para tabla "Order" <------//
 
 //-----Creación de pedido-----//
 const OrderController = {
   async create(req, res, next) {
-    try {      
+    try {
       const newOrder = {
-        UserId : req.user.id,
-        date: new Date,
-        updatedAt: new Date,
-        createdAt: new Date,
-      }
-      const order = await Order.create(newOrder);      
+        UserId: req.user.id,
+        date: new Date(),
+        updatedAt: new Date(),
+        createdAt: new Date(),
+      };
+      const order = await Order.create(newOrder);
       req.body.productsId.forEach(async productId => {
+<<<<<<< HEAD
       await Order_Product.create({ProductId:productId, OrderId: order.id})
       });    //thanks to mike & Xavi
+=======
+        await Order_Product.create({ ProductId: productId, OrderId: order.id });
+      });
+>>>>>>> a50fa167e91ac05bb38294c2151d2862ce5112f5
       res.status(201).send({ message: 'order added...', order });
     } catch (error) {
       console.log(error);
-      error.origin = 'Order'
-          next(error)
+      error.origin = 'Order';
+      next(error);
     }
   },
   //-----Muestra el pedido y a su usuario-----//
@@ -60,10 +71,12 @@ const OrderController = {
             model: Product,
             through: { attributes: [] },
             attributes: ['product', 'price'],
-            include: [{
-              model: Section,
-              attributes:['section']
-            }],
+            include: [
+              {
+                model: Section,
+                attributes: ['section'],
+              },
+            ],
           },
         ],
       });
