@@ -6,6 +6,7 @@ module.exports = {
       {
         product: 'One Plus 10 Pro',
         price: 825,
+        oldprice: 975,
         image_path: '/images/user/products/oneplus10.jpg',
         SectionId: 1,
         CategoryId: 1,
@@ -15,6 +16,7 @@ module.exports = {
       {
         product: 'Xiaomi MI 11 Lite',
         price: 289,
+        oldprice: 395,
         image_path: '/images/user/products/xiaomi11.jpg',
         SectionId: 1,
         CategoryId: 2,
@@ -24,6 +26,7 @@ module.exports = {
       {
         product: 'Iphone 13',
         price: 815,
+        oldprice: 999,
         image_path: '/images/user/products/iphone13.jpg',
         SectionId: 1,
         CategoryId: 1,
@@ -33,6 +36,7 @@ module.exports = {
       {
         product: 'One Plus Nord 2',
         price: 399,
+        oldprice: 575,
         image_path: '/images/user/products/OnePlusNord.jpg',
         SectionId: 1,
         CategoryId: 2,
@@ -42,6 +46,7 @@ module.exports = {
       {
         product: 'Xiaomi Redmi 9',
         price: 175,
+        oldprice: 275,
         image_path: '/images/user/products/redmi9.jpg',
         SectionId: 1,
         CategoryId: 3,
@@ -51,6 +56,7 @@ module.exports = {
       {
         product: 'Samsung Galaxy S22 ULTRA',
         price: 999,
+        oldprice: 1975,
         image_path: '/images/user/products/s22ultra.jpg',
         SectionId: 1,
         CategoryId: 1,
@@ -60,6 +66,7 @@ module.exports = {
       {
         product: 'Apple Ipad Pro 12.9',
         price: 995,
+        oldprice: 1475,
         image_path: '/images/user/products/ipad12.jpg',
         SectionId: 2,
         CategoryId: 1,
@@ -69,6 +76,7 @@ module.exports = {
       {
         product: 'Samsung Galaxy Tab',
         price: 1025,
+        oldprice: 1375,
         image_path: '/images/user/products/galaxytab.jpg',
         SectionId: 2,
         CategoryId: 2,
@@ -78,6 +86,7 @@ module.exports = {
       {
         product: 'Xiaomi Pad 5 Pro',
         price: 553,
+        oldprice: 775,
         image_path: '/images/user/products/xiaomipad.jpg',
         SectionId: 2,
         CategoryId: 2,
@@ -87,6 +96,7 @@ module.exports = {
       {
         product: 'Lenovo Yoga Tab 13',
         price: 499,
+        oldprice: 675,
         image_path: '/images/user/products/yogatab.jpg',
         SectionId: 2,
         CategoryId: 2,
@@ -96,6 +106,7 @@ module.exports = {
       {
         product: 'Chuwi HiPad X',
         price: 160,
+        oldprice: 205,
         image_path: '/images/user/products/chuwi.jpg',
         SectionId: 2,
         CategoryId: 3,
@@ -105,6 +116,7 @@ module.exports = {
       {
         product: 'HP OMEN 16-b0044',
         price: 1499,
+        oldprice: 1975,
         image_path: '/images/user/products/omen.jpg',
         SectionId: 4,
         CategoryId: 1,
@@ -114,6 +126,7 @@ module.exports = {
       {
         product: 'MSI KATANA GF66',
         price: 1289,
+        oldprice: 1775,
         image_path: '/images/user/products/katana.jpg',
         SectionId: 4,
         CategoryId: 1,
@@ -123,6 +136,7 @@ module.exports = {
       {
         product: 'Asus Zenbook 14',
         price: 899,
+        oldprice: 1075,
         image_path: '/images/user/products/zenbook.jpg',
         SectionId: 4,
         CategoryId: 2,
@@ -132,6 +146,7 @@ module.exports = {
       {
         product: 'Lenovo IdeaPad 5',
         price: 699,
+        oldprice: 875,
         image_path: '/images/user/products/ideapad5.jpg',
         SectionId: 4,
         CategoryId: 2,
@@ -141,6 +156,7 @@ module.exports = {
       {
         product: 'Lenovo IdeaPad 3',
         price: 569,
+        oldprice: 775,
         image_path: '/images/user/products/ideapad3.jpg',
         SectionId: 4,
         CategoryId: 3,
@@ -150,6 +166,7 @@ module.exports = {
       {
         product: 'Apple Watch series 7 ',
         price: 459,
+        oldprice: 675,
         image_path: '/images/user/products/watch7.jpg',
         SectionId: 3,
         CategoryId: 1,
@@ -159,6 +176,7 @@ module.exports = {
       {
         product: 'Garmin Fenix 6',
         price: 379,
+        oldprice: 575,
         image_path: '/images/user/products/garmin.jpg',
         SectionId: 3,
         CategoryId: 1,
@@ -168,6 +186,7 @@ module.exports = {
       {
         product: 'Xiaomi mIband 6',
         price: 39,
+        oldprice: 75,
         image_path: '/images/user/products/miband.jpg',
         SectionId: 3,
         CategoryId: 3,
@@ -177,6 +196,7 @@ module.exports = {
       {
         product: 'Samsung Galaxy Watch 4',
         price: 175,
+        oldprice: 375,
         image_path: '/images/user/products/galaxywatch.jpg',
         SectionId: 3,
         CategoryId: 2,
@@ -186,6 +206,7 @@ module.exports = {
       {
         product: 'Xiaomi Redmi Watch 2',
         price: 59,
+        oldprice: 95,
         image_path: '/images/user/products/redmiwatch.jpg',
         SectionId: 3,
         CategoryId: 3,

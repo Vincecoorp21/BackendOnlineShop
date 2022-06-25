@@ -23,6 +23,10 @@ const OrderController = {
       req.body.productsId.forEach(async productId => {
         await Order_Product.create({ ProductId: productId, OrderId: order.id });
       });
+<<<<<<< HEAD
+=======
+
+>>>>>>> 49aecd1fef0cbbd7c6a0d41f87d67d4743da9bf7
       res.status(201).send({ message: 'order added...', order });
     } catch (error) {
       console.log(error);
