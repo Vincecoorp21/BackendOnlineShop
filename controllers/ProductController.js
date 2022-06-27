@@ -119,7 +119,7 @@ const ProductController = {
             },
             include: [{
               model:Review,
-              attributes: ['review']
+              attributes: ['review', 'rating']
             }],
           });
           res.status(201).send({message: 'Product found...',productById})
