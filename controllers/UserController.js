@@ -160,7 +160,7 @@ const UserController = {
         include: [
           {
             model: Order,
-            attributes: ['id'],
+            attributes: ['order_num'],
             include: [
               {
                 model: Product,

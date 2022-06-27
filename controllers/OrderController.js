@@ -1,3 +1,5 @@
+
+
 const {
   Order,
   User,
@@ -7,13 +9,15 @@ const {
 } = require('../models/index');
 
 //-----> Controlador para tabla "Order" <------//
+const OrderID = require("ordersid-generator")
 
 //-----Creación de pedido-----//
 const OrderController = {
+  
   async create(req, res, next) {
     try {
       const newOrder = {
-        UserId: req.user.id,
+        UserId: req.user.id,        
         date: new Date(),        
         updatedAt: new Date(),
         createdAt: new Date(),        
@@ -23,17 +27,16 @@ const OrderController = {
       req.body.productsId.forEach(async productId => {
         await Order_Product.create({ ProductId: productId, OrderId: order.id });
       });
-<<<<<<< HEAD
-=======
 
->>>>>>> 49aecd1fef0cbbd7c6a0d41f87d67d4743da9bf7
       res.status(201).send({ message: 'order added...', order });
     } catch (error) {
       console.log(error);
       error.origin = 'Order';
       next(error);
     }
+    
   },
+  
   //-----Muestra el pedido y a su usuario-----//
   async getOrderUser(req, res) {
     try {

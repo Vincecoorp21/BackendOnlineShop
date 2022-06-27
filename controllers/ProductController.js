@@ -1,4 +1,4 @@
-const {Product, Order, Category, Section} = require('../models/index');
+const {Product, Order, Category, Section, Review} = require('../models/index');
 
 //-----> Controlador para tabla "Product" <------// 
 
@@ -38,7 +38,7 @@ const ProductController = {
             {
               model:Order,
               through: {attributes: []},
-              attributes: ['order_num'],
+              attributes: ['id'],
               
             },
           ]
@@ -109,17 +109,22 @@ const ProductController = {
 //-----Muestra el producto por ID-----//
       async getProductById (req, res){
         try {
-          const productById = await Product.findAll({
+          const productById = await Product.findOne({
             attributes: {
               exclude: ['createdAt', 'updatedAt', 'SectionId', 'CategoryId'],
             },
+            
             where:{
               id: req.params.id
-            }
-          },
-          );
+            },
+            include: [{
+              model:Review,
+              attributes: ['review']
+            }],
+          });
           res.status(201).send({message: 'Product found...',productById})
         } catch (error) {
+          console.error(error)
           res.status(500).send({ message: ' We had a problem searching the product...' });
         }
       },
@@ -154,6 +159,7 @@ const ProductController = {
           );
           res.status(201).send({message: 'Product found...', ProductByPrice})              
         } catch (error) {
+          
           res.status(500).send({message: ' We had a problem searching the product...' });
         }
       },
