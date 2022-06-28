@@ -123,6 +123,18 @@ module.exports = {
         createdAt: new Date(),
         updatedAt: new Date(),
       },
+      {
+        OrderId: 8,
+        ProductId: 21,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
+      {
+        OrderId: 8,
+        ProductId: 1,
+        createdAt: new Date(),
+        updatedAt: new Date(),
+      },
     ]);
   },
 
