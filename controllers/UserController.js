@@ -164,7 +164,7 @@ const UserController = {
             include: [
               {
                 model: Product,
-                attributes: ['product', 'price'],
+                attributes: ['product', 'price', 'image_path'],
                 through: { attributes: [] },
               },
             ],

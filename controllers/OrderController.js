@@ -1,5 +1,3 @@
-
-
 const {
   Order,
   User,
@@ -9,20 +7,19 @@ const {
 } = require('../models/index');
 
 //-----> Controlador para tabla "Order" <------//
-const OrderID = require("ordersid-generator")
+// const OrderID = require("ordersid-generator")
 
 //-----Creación de pedido-----//
 const OrderController = {
-  
   async create(req, res, next) {
     try {
       const newOrder = {
-        UserId: req.user.id,        
-        date: new Date(),        
+        UserId: req.user.id,
+        date: new Date(),
         updatedAt: new Date(),
-        createdAt: new Date(),        
+        createdAt: new Date(),
       };
-      
+
       const order = await Order.create(newOrder);
       req.body.productsId.forEach(async productId => {
         await Order_Product.create({ ProductId: productId, OrderId: order.id });
@@ -34,9 +31,8 @@ const OrderController = {
       error.origin = 'Order';
       next(error);
     }
-    
   },
-  
+
   //-----Muestra el pedido y a su usuario-----//
   async getOrderUser(req, res) {
     try {
